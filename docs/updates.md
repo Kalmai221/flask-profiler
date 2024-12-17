@@ -1,4 +1,4 @@
-## Update 1.8.4.2
+## Update 1.8.4.3
 
 - Fixed update checking
 - Changed the package name so does not conflict with the original project

@@ -215,7 +215,7 @@ def registerInternalRouters(app):
     def index():
         # URLs to fetch the remote and local version.txt
         if CONF["updateCheck"]:
-            remote_url = 'https://raw.githubusercontent.com/Kalmai221/flask-profiler/refs/heads/master/flask_profiler/static/dist/version.txt'
+            remote_url = 'https://raw.githubusercontent.com/Kalmai221/flask-profiler/refs/heads/master/flask_profilerforked/static/dist/version.txt'
             local_url = request.base_url + 'static/dist/version.txt'  # Update with your actual URL
 
             try:
