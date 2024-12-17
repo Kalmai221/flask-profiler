@@ -15,6 +15,9 @@ from flask_login import LoginManager, UserMixin, login_user, login_required, cur
 
 from . import storage
 
+import sys
+import unittest
+
 CONF = {}
 collection = None
 
@@ -439,3 +442,21 @@ class Profiler(object):
     def init_app(self, app):
         init = functools.partial(self._init_app, app)
         app.before_first_request(init)
+
+def run_tests():
+    """Function to run the tests."""
+    # Import test modules
+    from .test import MyTestClass
+
+    # Discover and run tests
+    loader = unittest.TestLoader()
+    suite = loader.loadTestsFromTestCase(MyTestClass)
+    runner = unittest.TextTestRunner()
+    runner.run(suite)
+
+if __name__ == "__main__":
+    # Check if the 'test' command is passed
+    if len(sys.argv) > 1 and sys.argv[1] == 'test':
+        run_tests()
+    else:
+        print("Usage: python -m Flask-ProfilerForked test")
